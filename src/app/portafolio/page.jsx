@@ -51,21 +51,21 @@ export default function Portafolio(){
         {/* Cards del portafolio */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-10">
           {/* Proyecto Denisse */}
-          <a href="/proyecto/denisse" target="_blank" rel="noopener noreferrer" className="group block">
-            <div className="relative overflow-hidden rounded-2xl ring-1 ring-white/10 shadow-xl transition-transform duration-300 group-hover:scale-[1.02]">
+          <a href="https://runajoyas.cl/" target="_blank" rel="noopener noreferrer" className="group block">
+            <div className="relative overflow-hidden rounded-2xl ring-1 ring-white/10 shadow-xl transition-transform duration-300 group-hover:scale-[1.02] h-80 md:h-96 flex flex-col justify-end">
               <Image
-                src="/deniss.png"
-                alt="Proyecto Denisse"
+                src="/runa.png"
+                alt="Runa Joyas"
                 width={600}
                 height={600}
-                className="w-full h-auto object-cover"
+                className="w-full h-full object-cover"
               />
               {/* Overlay negro difuminado y texto morado eléctrico */}
               <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition duration-300">
                 <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/60 to-transparent"></div>
                 <div className="relative h-full w-full flex items-end justify-center p-6">
                   <p className="text-fuchsia-400 drop-shadow-[0_0_12px_rgba(168,85,247,0.35)] text-lg md:text-xl font-semibold text-center">
-                    Deniss Beltrán / Psicóloga
+                    Runa Joyas
                   </p>
                 </div>
               </div>
@@ -74,13 +74,13 @@ export default function Portafolio(){
 
           {/* Proyecto JPA */}
           <a href="https://jpaingenieriasolutions.cl/" target="_blank" rel="noopener noreferrer" className="group block">
-            <div className="relative overflow-hidden rounded-2xl ring-1 ring-white/10 shadow-xl transition-transform duration-300 group-hover:scale-[1.02]">
+            <div className="relative overflow-hidden rounded-2xl ring-1 ring-white/10 shadow-xl transition-transform duration-300 group-hover:scale-[1.02] h-80 md:h-96 flex flex-col justify-end">
               <Image
                 src="/jpa.png"
                 alt="Proyecto JPA"
                 width={600}
                 height={600}
-                className="w-full h-auto object-cover"
+                className="w-full h-full object-cover"
               />
               {/* Overlay negro difuminado y texto morado eléctrico */}
               <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition duration-300">
