@@ -45,32 +45,33 @@ export const MacbookScroll = ({
     }
   }, []);
 
+  // Optimizado: rangos ultra cortos para scroll instantáneo
   const scaleX = useTransform(
     scrollYProgress,
-    [0, 0.3],
-    [1.2, isMobile ? 1.2 : 1.6],
+    [0, 0.15],
+    [1.2, isMobile ? 1.2 : 1.25],
   );
   const scaleY = useTransform(
     scrollYProgress,
-    [0, 0.3],
-    [0.6, isMobile ? 1.2 : 1.6],
+    [0, 0.15],
+    [0.6, isMobile ? 1.2 : 1.25],
   );
   const translate = useTransform(scrollYProgress, [0, 1], [0, 1500]);
-  const rotate = useTransform(scrollYProgress, [0.1, 0.12, 0.3], [-28, -28, 0]);
-  const textTransform = useTransform(scrollYProgress, [0, 0.3], [0, 100]);
-  const textOpacity = useTransform(scrollYProgress, [0, 0.2], [1, 0]);
+  const rotate = useTransform(scrollYProgress, [0.08, 0.1, 0.15], [-28, -28, 0]);
+  const textTransform = useTransform(scrollYProgress, [0, 0.1], [0, 100]);
+  const textOpacity = useTransform(scrollYProgress, [0, 0.08], [1, 0]);
 
   return (
     <div
       ref={ref}
-      className="flex min-h-[200vh] shrink-0 scale-[0.55] transform flex-col items-center justify-start py-0 [perspective:800px] sm:scale-75 md:scale-100 lg:scale-125 md:py-80"
+      className="flex min-h-[150vh] shrink-0 scale-[0.55] transform flex-col items-center justify-start py-0 [perspective:800px] sm:scale-75 md:scale-100 lg:scale-125 md:py-40 will-change-auto"
     >
       <motion.h2
         style={{
           translateY: textTransform,
           opacity: textOpacity,
         }}
-        className="mb-20 text-center text-3xl font-bold text-neutral-800 dark:text-white"
+        className="mb-20 text-center text-3xl font-bold text-neutral-800 dark:text-white will-change-auto"
       >
         {title || (
           <span>
@@ -157,7 +158,7 @@ export const Lid = ({
         <img
           src={src}
           alt="aceternity logo"
-          className="absolute inset-0 h-full w-full rounded-lg object-cover object-left-top"
+          className="absolute inset-0 h-full w-full rounded-lg object-cover object-center"
         />
       </motion.div>
     </div>

@@ -26,77 +26,86 @@ export default function Pricing1() {
           <Badge className="text-base px-4 py-2">Planes y precios</Badge>
           <div className="flex gap-2 flex-col">
             <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl tracking-tighter w-full text-center font-regular whitespace-nowrap">
-              Elige el plan ideal para tu negocio
+              Elige el plan ideal para tu E-commerce
             </h2>
             <p className="mt-8 text-lg leading-relaxed tracking-tight text-muted-foreground max-w-2xl text-center">
-              Tenemos tres opciones paralelas que se adaptan a tu proyecto: desde una página estática editable, pasando por un sitio dinámico multiplataforma con agendamiento, hasta una aplicación web a medida por módulos.
+              Desde tiendas online listas para vender, hasta soluciones empresariales escalables con IA y gestión multi-sucursal. Todos nuestros planes incluyen diseño personalizado y tecnología de última generación.
             </p>
           </div>
           <div className="grid pt-20 text-left grid-cols-1 lg:grid-cols-3 w-full gap-8">
             
-            {/* Página Web Profesional */}
-            <Card className="w-full rounded-xl flex flex-col bg-gradient-to-br from-gray-900/50 to-gray-800/50 backdrop-blur-sm border-gray-700/50 hover:border-indigo-500/50 transition-all duration-300">
+            {/* E-commerce Lite */}
+            <Card className="w-full rounded-xl flex flex-col bg-gradient-to-br from-gray-900/50 to-gray-800/50 backdrop-blur-sm border-gray-700/50 hover:border-cyan-500/50 transition-all duration-300">
               <CardHeader>
                 <CardTitle>
                   <span className="flex flex-row gap-4 items-center font-normal text-white">
-                    Página Web Profesional
+                    E-commerce Lite
                   </span>
                 </CardTitle>
                 <CardDescription className="text-gray-300">
-                  Tu presencia digital como nunca antes.
+                  Tu tienda online profesional lista para vender desde el día uno.
                 </CardDescription>
               </CardHeader>
               <CardContent className="flex-grow">
                 <div className="flex flex-col gap-8 justify-start">
                   <p className="flex flex-row items-center gap-2 text-xl">
-                    <span className="text-4xl text-white font-bold">Desde $99.000</span>
+                    <span className="text-4xl text-white font-bold">$320.000</span>
                     <span className="text-sm text-gray-400">
                       + IVA
                     </span>
                   </p>
                   <div className="flex flex-col gap-4 justify-start">
                     <div className="flex flex-row gap-4">
-                      <Check className="w-4 h-4 mt-2 text-indigo-400" />
+                      <Check className="w-4 h-4 mt-2 text-cyan-400" />
                       <div className="flex flex-col">
-                        <p className="text-white">Autoadministrable</p>
+                        <p className="text-white">Diseño UI/UX personalizado</p>
                         <p className="text-gray-400 text-sm">
-                          Actualiza tu contenido sin depender de terceros
+                          No plantillas, 100% a medida
                         </p>
                       </div>
                     </div>
                     <div className="flex flex-row gap-4">
-                      <Check className="w-4 h-4 mt-2 text-indigo-400" />
+                      <Check className="w-4 h-4 mt-2 text-cyan-400" />
                       <div className="flex flex-col">
-                        <p className="text-white">Hosting y dominio incluidos</p>
+                        <p className="text-white">Hosting + Dominio opcional</p>
                         <p className="text-gray-400 text-sm">
-                          Lista para funcionar desde el primer día
+                          Correos corporativos ilimitados
                         </p>
                       </div>
                     </div>
                     <div className="flex flex-row gap-4">
-                      <Check className="w-4 h-4 mt-2 text-indigo-400" />
+                      <Check className="w-4 h-4 mt-2 text-cyan-400" />
                       <div className="flex flex-col">
-                        <p className="text-white">Hasta 4 secciones personalizables</p>
+                        <p className="text-white">Catálogo completo</p>
                         <p className="text-gray-400 text-sm">
-                          Servicios, productos o portafolio
+                          Categorías, filtros y galería por producto
                         </p>
                       </div>
                     </div>
                     <div className="flex flex-row gap-4">
-                      <Check className="w-4 h-4 mt-2 text-indigo-400" />
+                      <Check className="w-4 h-4 mt-2 text-cyan-400" />
                       <div className="flex flex-col">
-                        <p className="text-white">Optimizado para conversión</p>
+                        <p className="text-white">Pasarela MercadoPago</p>
                         <p className="text-gray-400 text-sm">
-                          Diseño optimizado para confianza y conversión
+                          Checkout Pro integrado
                         </p>
                       </div>
                     </div>
                     <div className="flex flex-row gap-4">
-                      <Check className="w-4 h-4 mt-2 text-indigo-400" />
+                      <Check className="w-4 h-4 mt-2 text-cyan-400" />
                       <div className="flex flex-col">
-                        <p className="text-white">100% responsive</p>
+                        <p className="text-white">Panel administrador</p>
                         <p className="text-gray-400 text-sm">
-                          Computador, tablet y smartphone
+                          Productos, categorías y stock manual
+                        </p>
+                      </div>
+                    </div>
+                    <div className="flex flex-row gap-4">
+                      <Check className="w-4 h-4 mt-2 text-cyan-400" />
+                      <div className="flex flex-col">
+                        <p className="text-white">SEO avanzado + WhatsApp</p>
+                        <p className="text-gray-400 text-sm">
+                          Posicionamiento y contacto directo
                         </p>
                       </div>
                     </div>
@@ -105,12 +114,12 @@ export default function Pricing1() {
               </CardContent>
               <div className="p-6 pt-0 mt-auto">
                 <div className="relative inline-flex items-center justify-center w-full group">
-                  <div className="absolute inset-0 duration-1000 opacity-60 transition-all bg-gradient-to-r from-indigo-500 via-pink-500 to-yellow-400 rounded-xl blur-lg filter group-hover:opacity-100 group-hover:duration-200"></div>
+                  <div className="absolute inset-0 duration-1000 opacity-60 transition-all bg-gradient-to-r from-cyan-500 via-blue-500 to-purple-500 rounded-xl blur-lg filter group-hover:opacity-100 group-hover:duration-200"></div>
                   <a
                     href="/comprar"
                     className="w-full group relative inline-flex items-center justify-center text-base rounded-xl bg-gray-900 px-8 py-3 font-semibold text-white transition-all duration-200 hover:bg-gray-800 hover:shadow-lg hover:-translate-y-0.5 hover:shadow-gray-600/30"
                   >
-                    Contratar
+                    Contratar ahora
                     <svg
                       aria-hidden="true"
                       viewBox="0 0 10 10"
@@ -127,78 +136,89 @@ export default function Pricing1() {
               </div>
             </Card>
 
-            {/* Multiplataforma Web Avanzada */}
-            <Card className="w-full shadow-2xl rounded-xl flex flex-col bg-gradient-to-br from-indigo-900/60 to-purple-900/60 backdrop-blur-sm border-2 border-indigo-500/50 hover:border-indigo-400 transition-all duration-300 transform hover:scale-105">
-              <CardHeader>
+            {/* E-commerce UltraScale - PLAN DESTACADO EN EL CENTRO */}
+            <Card className="w-full shadow-2xl rounded-xl flex flex-col bg-gradient-to-br from-purple-900/60 to-fuchsia-900/60 backdrop-blur-sm border-2 border-fuchsia-500/50 hover:border-fuchsia-400 transition-all duration-300 transform hover:scale-105">
+              <div className="absolute -top-4 left-1/2 -translate-x-1/2 z-10">
+                <Badge className="bg-gradient-to-r from-fuchsia-500 to-purple-500 text-white px-4 py-1 text-sm font-semibold shadow-lg">
+                  MÁS POPULAR
+                </Badge>
+              </div>
+              <CardHeader className="pt-8">
                 <CardTitle>
                   <span className="flex flex-row gap-4 items-center font-normal text-white">
-                    Multiplataforma Web Avanzada
+                    E-commerce UltraScale
                   </span>
                 </CardTitle>
                 <CardDescription className="text-gray-200">
-                  Una solución completa para digitalizar tu negocio y optimizar tu tiempo.
+                  La solución empresarial completa para escalar sin límites.
                 </CardDescription>
               </CardHeader>
               <CardContent className="flex-grow">
                 <div className="flex flex-col gap-8 justify-start">
                   <p className="flex flex-row items-center gap-2 text-xl">
-                    <span className="text-4xl text-white font-bold">Desde $249.990</span>
+                    <span className="text-4xl text-white font-bold">$1.370.000</span>
                     <span className="text-sm text-gray-300">
                       + IVA
                     </span>
                   </p>
                   <div className="flex flex-col gap-4 justify-start">
                     <div className="flex flex-row gap-4">
-                      <Check className="w-4 h-4 mt-2 text-cyan-400" />
+                      <Check className="w-4 h-4 mt-2 text-fuchsia-400" />
                       <div className="flex flex-col">
-                        <p className="text-white">Integración con Google API</p>
+                        <p className="text-white font-semibold">Todo lo del Plan ProSuite +</p>
+                      </div>
+                    </div>
+                    <div className="flex flex-row gap-4">
+                      <Check className="w-4 h-4 mt-2 text-fuchsia-400" />
+                      <div className="flex flex-col">
+                        <p className="text-white">Servidor exclusivo y dedicado</p>
                         <p className="text-gray-300 text-sm">
-                          Agenda y correos sincronizados
+                          Alto rendimiento garantizado
                         </p>
                       </div>
                     </div>
                     <div className="flex flex-row gap-4">
-                      <Check className="w-4 h-4 mt-2 text-cyan-400" />
+                      <Check className="w-4 h-4 mt-2 text-fuchsia-400" />
                       <div className="flex flex-col">
-                        <p className="text-white">Agendamiento en línea</p>
+                        <p className="text-white">Gestión multi-sucursal</p>
                         <p className="text-gray-300 text-sm">
-                          Reservas fáciles desde tu web
+                          Control completo por sucursal
                         </p>
                       </div>
                     </div>
                     <div className="flex flex-row gap-4">
-                      <Check className="w-4 h-4 mt-2 text-cyan-400" />
+                      <Check className="w-4 h-4 mt-2 text-fuchsia-400" />
                       <div className="flex flex-col">
-                        <p className="text-white">Correos automáticos</p>
+                        <p className="text-white">Facturación electrónica + SII</p>
                         <p className="text-gray-300 text-sm">
-                          Confirmación automática de citas
+                          Boletas y facturas automáticas
                         </p>
                       </div>
                     </div>
                     <div className="flex flex-row gap-4">
-                      <Check className="w-4 h-4 mt-2 text-cyan-400" />
+                      <Check className="w-4 h-4 mt-2 text-fuchsia-400" />
                       <div className="flex flex-col">
-                        <p className="text-white">Base de datos en la nube</p>
+                        <p className="text-white">IA para atención al cliente</p>
                         <p className="text-gray-300 text-sm">
-                          Segura y accesible
+                          Respuestas automáticas inteligentes
                         </p>
                       </div>
                     </div>
                     <div className="flex flex-row gap-4">
-                      <Check className="w-4 h-4 mt-2 text-cyan-400" />
+                      <Check className="w-4 h-4 mt-2 text-fuchsia-400" />
                       <div className="flex flex-col">
-                        <p className="text-white">Autenticación profesional</p>
+                        <p className="text-white">Sistema de suscripciones</p>
                         <p className="text-gray-300 text-sm">
-                          Seguridad de usuarios garantizada
+                          Pagos recurrentes y renovaciones
                         </p>
                       </div>
                     </div>
                     <div className="flex flex-row gap-4">
-                      <Check className="w-4 h-4 mt-2 text-cyan-400" />
+                      <Check className="w-4 h-4 mt-2 text-fuchsia-400" />
                       <div className="flex flex-col">
-                        <p className="text-white">Panel autoadministrable</p>
+                        <p className="text-white">Seguridad + monitoreo 24/7</p>
                         <p className="text-gray-300 text-sm">
-                          Gestiona contenido y configuraciones
+                          Estadísticas y métricas en tiempo real
                         </p>
                       </div>
                     </div>
@@ -207,12 +227,12 @@ export default function Pricing1() {
               </CardContent>
               <div className="p-6 pt-0 mt-auto">
                 <div className="relative inline-flex items-center justify-center w-full group">
-                  <div className="absolute inset-0 duration-1000 opacity-80 transition-all bg-gradient-to-r from-cyan-500 via-indigo-500 to-purple-500 rounded-xl blur-lg filter group-hover:opacity-100 group-hover:duration-200"></div>
+                  <div className="absolute inset-0 duration-1000 opacity-80 transition-all bg-gradient-to-r from-fuchsia-500 via-purple-500 to-pink-500 rounded-xl blur-lg filter group-hover:opacity-100 group-hover:duration-200"></div>
                   <a
                     href="/comprar"
-                    className="w-full group relative inline-flex items-center justify-center text-base rounded-xl bg-indigo-600 px-8 py-3 font-semibold text-white transition-all duration-200 hover:bg-indigo-700 hover:shadow-lg hover:-translate-y-0.5 hover:shadow-indigo-600/50"
+                    className="w-full group relative inline-flex items-center justify-center text-base rounded-xl bg-fuchsia-600 px-8 py-3 font-semibold text-white transition-all duration-200 hover:bg-fuchsia-700 hover:shadow-lg hover:-translate-y-0.5 hover:shadow-fuchsia-600/50"
                   >
-                    Contratar
+                    Solicitar cotización
                     <svg
                       aria-hidden="true"
                       viewBox="0 0 10 10"
@@ -229,69 +249,84 @@ export default function Pricing1() {
               </div>
             </Card>
 
-            {/* E-Commerce Profesional */}
-            <Card className="w-full rounded-xl flex flex-col bg-gradient-to-br from-gray-900/50 to-gray-800/50 backdrop-blur-sm border-gray-700/50 hover:border-indigo-500/50 transition-all duration-300">
+            {/* E-commerce ProSuite */}
+            <Card className="w-full rounded-xl flex flex-col bg-gradient-to-br from-gray-900/50 to-gray-800/50 backdrop-blur-sm border-gray-700/50 hover:border-purple-500/50 transition-all duration-300">
               <CardHeader>
                 <CardTitle>
                   <span className="flex flex-row gap-4 items-center font-normal text-white">
-                    E-Commerce Profesional
+                    E-commerce ProSuite
                   </span>
                 </CardTitle>
                 <CardDescription className="text-gray-300">
-                  Convierte tu negocio en una tienda online moderna, segura y fácil de administrar.
+                  Automatización avanzada para negocios en crecimiento.
                 </CardDescription>
               </CardHeader>
               <CardContent className="flex-grow">
                 <div className="flex flex-col gap-8 justify-start">
                   <p className="flex flex-row items-center gap-2 text-xl">
-                    <span className="text-4xl text-white font-bold">Desde $350.000</span>
+                    <span className="text-4xl text-white font-bold">$670.000</span>
                     <span className="text-sm text-gray-400">
                       + IVA
                     </span>
                   </p>
                   <div className="flex flex-col gap-4 justify-start">
                     <div className="flex flex-row gap-4">
-                      <Check className="w-4 h-4 mt-2 text-indigo-400" />
+                      <Check className="w-4 h-4 mt-2 text-purple-400" />
                       <div className="flex flex-col">
-                        <p className="text-white">Pasarela de pago integrada</p>
+                        <p className="text-white font-semibold">Todo lo del Plan Lite +</p>
+                      </div>
+                    </div>
+                    <div className="flex flex-row gap-4">
+                      <Check className="w-4 h-4 mt-2 text-purple-400" />
+                      <div className="flex flex-col">
+                        <p className="text-white">Inventario automático</p>
                         <p className="text-gray-400 text-sm">
-                          Webpay, MercadoPago, Stripe
+                          Descuento de stock por venta
                         </p>
                       </div>
                     </div>
                     <div className="flex flex-row gap-4">
-                      <Check className="w-4 h-4 mt-2 text-indigo-400" />
+                      <Check className="w-4 h-4 mt-2 text-purple-400" />
                       <div className="flex flex-col">
-                        <p className="text-white">Carrito de compras dinámico</p>
+                        <p className="text-white">Notificaciones automáticas</p>
                         <p className="text-gray-400 text-sm">
-                          Experiencia de compra fluida
+                          Correos al despachar pedidos
                         </p>
                       </div>
                     </div>
                     <div className="flex flex-row gap-4">
-                      <Check className="w-4 h-4 mt-2 text-indigo-400" />
+                      <Check className="w-4 h-4 mt-2 text-purple-400" />
                       <div className="flex flex-col">
-                        <p className="text-white">Panel autoadministrable</p>
+                        <p className="text-white">Carritos perdidos</p>
                         <p className="text-gray-400 text-sm">
-                          Precios, imágenes y descripciones
+                          Seguimiento por correo + WhatsApp
                         </p>
                       </div>
                     </div>
                     <div className="flex flex-row gap-4">
-                      <Check className="w-4 h-4 mt-2 text-indigo-400" />
+                      <Check className="w-4 h-4 mt-2 text-purple-400" />
                       <div className="flex flex-col">
-                        <p className="text-white">Base de datos en la nube</p>
+                        <p className="text-white">Cupones de descuento</p>
                         <p className="text-gray-400 text-sm">
-                          Seguridad y disponibilidad
+                          Sistema completo de promociones
                         </p>
                       </div>
                     </div>
                     <div className="flex flex-row gap-4">
-                      <Check className="w-4 h-4 mt-2 text-indigo-400" />
+                      <Check className="w-4 h-4 mt-2 text-purple-400" />
                       <div className="flex flex-col">
-                        <p className="text-white">Optimización SEO</p>
+                        <p className="text-white">Múltiples usuarios y roles</p>
                         <p className="text-gray-400 text-sm">
-                          Carga rápida y posicionamiento
+                          Pasarelas múltiples + SEO máximo
+                        </p>
+                      </div>
+                    </div>
+                    <div className="flex flex-row gap-4">
+                      <Check className="w-4 h-4 mt-2 text-purple-400" />
+                      <div className="flex flex-col">
+                        <p className="text-white">Copias de seguridad</p>
+                        <p className="text-gray-400 text-sm">
+                          Soporte continuo incluido
                         </p>
                       </div>
                     </div>
@@ -300,12 +335,12 @@ export default function Pricing1() {
               </CardContent>
               <div className="p-6 pt-0 mt-auto">
                 <div className="relative inline-flex items-center justify-center w-full group">
-                  <div className="absolute inset-0 duration-1000 opacity-60 transition-all bg-gradient-to-r from-indigo-500 via-pink-500 to-yellow-400 rounded-xl blur-lg filter group-hover:opacity-100 group-hover:duration-200"></div>
+                  <div className="absolute inset-0 duration-1000 opacity-60 transition-all bg-gradient-to-r from-purple-500 via-pink-500 to-fuchsia-500 rounded-xl blur-lg filter group-hover:opacity-100 group-hover:duration-200"></div>
                   <a
                     href="/comprar"
                     className="w-full group relative inline-flex items-center justify-center text-base rounded-xl bg-gray-900 px-8 py-3 font-semibold text-white transition-all duration-200 hover:bg-gray-800 hover:shadow-lg hover:-translate-y-0.5 hover:shadow-gray-600/30"
                   >
-                    Solicitar cotización
+                    Contratar ahora
                     <svg
                       aria-hidden="true"
                       viewBox="0 0 10 10"

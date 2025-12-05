@@ -1,37 +1,109 @@
 "use client";
+import { motion } from "framer-motion";
+import dynamic from "next/dynamic";
 import Portada from "./portada/page";
-import SobreNosotros from "./sobreNosotros/page";
-import Servicios from "./servicios/page";
-import Footer from "./Footer/page";
-import Portafolio from "./portafolio/page";
-import ScrollReveal from "../componentes/ScrollReveal";
 import Image from "next/image";
 import BotonBlanco from "@/componentes/BotonBlanco";
 import Link from "next/link";
-import { MacbookScroll } from "@/componentes/MacbookScroll";
 import FadeInSection from "@/componentes/FadeInSection";
+
+// Lazy load componentes pesados con loading optimization
+const SobreNosotros = dynamic(() => import("./sobreNosotros/page"), { 
+  ssr: false,
+  loading: () => <div className="min-h-[400px] bg-transparent" />
+});
+const Servicios = dynamic(() => import("./servicios/page"), { 
+  ssr: false,
+  loading: () => <div className="min-h-[600px] bg-transparent" />
+});
+const Footer = dynamic(() => import("./Footer/page"), { 
+  ssr: false,
+  loading: () => <div className="min-h-[200px] bg-transparent" />
+});
+const Portafolio = dynamic(() => import("./portafolio/page"), { 
+  ssr: false,
+  loading: () => <div className="min-h-[800px] bg-transparent" />
+});
+const MacbookScroll = dynamic(() => import("@/componentes/MacbookScroll").then(mod => ({ default: mod.MacbookScroll })), { 
+  ssr: false,
+  loading: () => <div className="min-h-screen bg-black" />
+});
 
 export default function Home() {
   return (
     <div className="relative">
-      {/* Botón flotante de WhatsApp */}
-      <div className="fixed bottom-20 right-8 z-[100]">
+      {/* Botón flotante profesional optimizado */}
+      <motion.div 
+        className="fixed bottom-8 right-8 z-[100]"
+        initial={{ scale: 0, opacity: 0, y: 100 }}
+        animate={{ scale: 1, opacity: 1, y: 0 }}
+        transition={{ 
+          duration: 0.5, 
+          delay: 0.8, 
+          ease: [0.34, 1.56, 0.64, 1],
+          type: "spring",
+          stiffness: 260,
+          damping: 20
+        }}
+      >
         <Link href={"/comprar"}>
-          <button className="button-float group">
-            <div className="dots_border">
-              <div className="dots_border_inner"></div>
+          <motion.button 
+            className="group relative flex items-center gap-3 px-7 py-4 bg-gradient-to-r from-purple-600 via-violet-600 to-fuchsia-600 rounded-full shadow-2xl overflow-hidden backdrop-blur-sm border border-white/10"
+            whileHover={{ scale: 1.05, y: -2 }}
+            whileTap={{ scale: 0.95 }}
+            transition={{ duration: 0.2, ease: "easeOut" }}
+          >
+            {/* Animated gradient overlay */}
+            <motion.div 
+              className="absolute inset-0 bg-gradient-to-r from-cyan-400 via-purple-500 to-pink-500 opacity-0 group-hover:opacity-100"
+              transition={{ duration: 0.3 }}
+            ></motion.div>
+            
+            {/* Glow effect */}
+            <div className="absolute inset-0 blur-2xl bg-purple-600/60 opacity-60 group-hover:opacity-100 transition-opacity duration-500 -z-10 group-hover:scale-110"></div>
+            
+            {/* Rotating border glow */}
+            <div className="absolute inset-[-3px] bg-gradient-to-r from-cyan-500 via-purple-500 to-pink-500 rounded-full opacity-0 group-hover:opacity-100 blur-md transition-all duration-500 -z-10 animate-spin-slow"></div>
+            
+            {/* Shimmer effect */}
+            <div className="absolute inset-0 -translate-x-full group-hover:translate-x-full transition-transform duration-1000 bg-gradient-to-r from-transparent via-white/30 to-transparent"></div>
+            
+            {/* Icon container with pulse */}
+            <motion.div 
+              className="relative z-10 w-8 h-8 flex items-center justify-center"
+              whileHover={{ rotate: [0, -10, 10, -10, 0] }}
+              transition={{ duration: 0.5 }}
+            >
+              <Image 
+                src="/ico2.png" 
+                alt="NativeCode Logo" 
+                width={32} 
+                height={32}
+                className="rounded-full ring-2 ring-white/40 group-hover:ring-white/80 group-hover:scale-110 transition-all duration-300 shadow-lg"
+                priority
+              />
+            </motion.div>
+            
+            {/* Text with gradient */}
+            <span className="relative z-10 font-bold text-white text-base tracking-wide group-hover:tracking-wider transition-all duration-300 drop-shadow-lg">
+              Contáctanos
+            </span>
+            
+            {/* Notification badge with pulse */}
+            <span className="absolute -top-1 -right-1 flex h-4 w-4 z-20">
+              <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-cyan-400 opacity-75"></span>
+              <span className="relative inline-flex rounded-full h-4 w-4 bg-gradient-to-r from-cyan-400 to-blue-500 shadow-lg shadow-cyan-500/50"></span>
+            </span>
+            
+            {/* Sparkle effects */}
+            <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+              <div className="absolute top-2 left-3 w-1 h-1 bg-white rounded-full animate-pulse"></div>
+              <div className="absolute bottom-3 right-5 w-1 h-1 bg-white rounded-full animate-pulse delay-75"></div>
+              <div className="absolute top-1/2 right-3 w-1 h-1 bg-white rounded-full animate-pulse delay-150"></div>
             </div>
-            <Image 
-              src="/ico2.png" 
-              alt="NativeCode Logo" 
-              width={28} 
-              height={28}
-              className="logo-float"
-            />
-            <span className="text_button">Contáctanos</span>
-          </button>
+          </motion.button>
         </Link>
-      </div>
+      </motion.div>
 
       {/* Sección 1: Portada */}
       <div className="relative mb-32">
@@ -40,11 +112,11 @@ export default function Home() {
       </div>
 
       {/* Sección 2: MacBook Scroll Animation */}
-      <FadeInSection delay={0.2}>
-        <div className="relative w-full min-h-screen overflow-hidden bg-black dark">
+      <FadeInSection delay={0}>
+        <div className="relative w-full min-h-screen overflow-hidden bg-black dark will-change-auto">
           <div className="absolute top-0 left-0 right-0 h-32 bg-gradient-to-b from-black to-transparent pointer-events-none z-10"></div>
           <MacbookScroll
-            src="/adquierenativecode.jpg"
+            src="/loginmac.png"
             showGradient={false}
             title={
               <span className="text-white text-xl md:text-4xl lg:text-5xl">
@@ -59,16 +131,117 @@ export default function Home() {
         </div>
       </FadeInSection>
 
-      {/* Separador con imagen de fondo */}
-      <div className="relative overflow-hidden bg-[url('/wall3.png')] bg-cover bg-center w-full ring-1 ring-white/10 rounded-4xl shadow-2xl my-32 min-h-[200px]">
-        <div className="absolute inset-0 bg-gradient-to-r from-black/50 via-black/30 to-transparent" aria-hidden="true"></div>
-        <div className="absolute top-0 left-0 right-0 h-32 bg-gradient-to-b from-black to-transparent pointer-events-none"></div>
-        <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-black to-transparent pointer-events-none"></div>
-      </div>
+      {/* Separador con imagen de fondo - E-Commerce */}
+      <motion.div 
+        className="relative overflow-hidden bg-[url('/wall3.png')] bg-cover bg-center w-full ring-1 ring-white/10 rounded-4xl shadow-2xl my-32 min-h-[600px] will-change-auto"
+        initial={{ opacity: 0, y: 20 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true, margin: "0px", amount: 0.1 }}
+        transition={{ duration: 0.3, ease: "easeOut" }}
+      >
+        <div className="absolute inset-0 bg-gradient-to-r from-black/70 via-black/50 to-transparent" aria-hidden="true"></div>
+        <div className="absolute top-0 left-0 right-0 h-32 bg-gradient-to-b from-black to-transparent pointer-events-none z-10"></div>
+        
+        {/* Contenido */}
+        <div className="relative z-20 px-6 md:px-10 lg:px-14 py-16 md:py-24">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+            {/* Columna de texto */}
+            <motion.div 
+              className="lg:col-span-8"
+              initial={{ opacity: 0, x: -15 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true, amount: 0.1 }}
+              transition={{ duration: 0.3, delay: 0, ease: "easeOut" }}
+            >
+              <h2 className="text-3xl md:text-5xl lg:text-6xl font-bold text-white tracking-tight leading-tight mb-6">
+                Tu tienda <span className="bg-gradient-to-r from-cyan-400 to-purple-500 bg-clip-text text-transparent font-bold">
+                    siempre activa.
+                  </span>
+              </h2>
+              <h2 className="text-3xl md:text-5xl lg:text-6xl font-bold text-white tracking-tight leading-tight mb-6">
+                Tus ventas <span className="bg-gradient-to-r from-cyan-400 to-purple-500 bg-clip-text text-transparent">siempre creciendo.</span>   
+              </h2>
+              
+              <div className="space-y-4 text-justify text-base md:text-lg text-white/80">
+                <p>
+                  En <span className="font-semibold text-white">NativeCode</span>, somos una agencia especializada en el desarrollo de{" "}
+                  <span className="font-semibold text-cyan-400">e-commerce profesionales</span> y sistemas de venta automatizados 
+                  diseñados para escalar tu negocio sin complicaciones.
+                </p>
+                
+                <p>
+                  Creamos tiendas online de alto rendimiento, totalmente personalizadas, con infraestructura optimizada, 
+                  paneles de administración intuitivos, métodos de pago integrados, control de stock y flujos automatizados 
+                  que permiten convertir más y vender mejor.
+                </p>
+                
+                <p>
+                  Desde soluciones <span className="font-semibold text-cyan-400">Lite</span> para emprendedores, 
+                  plataformas <span className="font-semibold text-cyan-400">Pro</span> para negocios en crecimiento, 
+                  hasta sistemas completos en VPS dedicados con multi-sucursal, facturación electrónica, conexión con SII, 
+                  IA para atención al cliente y automatizaciones avanzadas.
+                </p>
+                
+                <p>
+                  Desarrollamos tecnología <span className="font-semibold text-white">rápida, segura y escalable</span>, 
+                  con enfoque en UX/UI, performance, SEO y automatización, para que tu negocio venda 24/7, crezca de forma 
+                  real y entregue una experiencia premium a cada cliente.
+                </p>
+                
+                <p className="text-lg md:text-xl font-semibold text-cyan-400 mt-6">
+                  Tu crecimiento es nuestra misión. Nosotros construimos. Tú escalas.
+                </p>
+              </div>
+            </motion.div>
+
+            {/* Columna de botones */}
+            <motion.div 
+              className="lg:col-span-4 flex flex-col gap-6 lg:items-end lg:justify-center lg:h-full lg:pr-8 mt-8 lg:mt-0"
+              initial={{ opacity: 0, x: 15 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true, amount: 0.1 }}
+              transition={{ duration: 0.3, delay: 0.05, ease: "easeOut" }}
+            >
+              <Link href="/eCommerce">
+                <div className="relative group">
+                  <button className="relative inline-block p-px font-semibold leading-6 text-white bg-gray-800 shadow-2xl cursor-pointer rounded-xl shadow-zinc-900 transition-transform duration-300 ease-in-out hover:scale-105 active:scale-95">
+                    <span className="absolute inset-0 rounded-xl bg-gradient-to-r from-violet-500 via-sky-500 to-pink-500 p-[2px] opacity-0 transition-opacity duration-500 group-hover:opacity-100"></span>
+                    <span className="relative z-10 block px-6 py-3 rounded-xl bg-gray-950">
+                      <div className="relative z-10 flex items-center space-x-2">
+                        <span className="transition-all duration-500 group-hover:translate-x-1">Ver soluciones E-Commerce</span>
+                        <svg className="w-6 h-6 transition-transform duration-500 group-hover:translate-x-1" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                          <path clipRule="evenodd" d="M8.22 5.22a.75.75 0 0 1 1.06 0l4.25 4.25a.75.75 0 0 1 0 1.06l-4.25 4.25a.75.75 0 0 1-1.06-1.06L11.94 10 8.22 6.28a.75.75 0 0 1 0-1.06Z" fillRule="evenodd"></path>
+                        </svg>
+                      </div>
+                    </span>
+                  </button>
+                </div>
+              </Link>
+              <Link href="/servicios">
+                <div className="relative group">
+                  <button className="relative inline-block p-px font-semibold leading-6 text-white bg-gray-800 shadow-2xl cursor-pointer rounded-xl shadow-zinc-900 transition-transform duration-300 ease-in-out hover:scale-105 active:scale-95">
+                    <span className="absolute inset-0 rounded-xl bg-gradient-to-r from-cyan-500 via-purple-500 to-fuchsia-500 p-[2px] opacity-0 transition-opacity duration-500 group-hover:opacity-100"></span>
+                    <span className="relative z-10 block px-6 py-3 rounded-xl bg-gray-950">
+                      <div className="relative z-10 flex items-center space-x-2">
+                        <span className="transition-all duration-500 group-hover:translate-x-1">Todos los servicios</span>
+                        <svg className="w-6 h-6 transition-transform duration-500 group-hover:translate-x-1" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                          <path clipRule="evenodd" d="M8.22 5.22a.75.75 0 0 1 1.06 0l4.25 4.25a.75.75 0 0 1 0 1.06l-4.25 4.25a.75.75 0 0 1-1.06-1.06L11.94 10 8.22 6.28a.75.75 0 0 1 0-1.06Z" fillRule="evenodd"></path>
+                        </svg>
+                      </div>
+                    </span>
+                  </button>
+                </div>
+              </Link>
+            </motion.div>
+          </div>
+        </div>
+        
+        <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-black to-transparent pointer-events-none z-10"></div>
+      </motion.div>
 
       {/* Sección 3: Servicios */}
-      <FadeInSection delay={0.3}>
-        <div className="relative my-32">
+      <FadeInSection delay={0}>
+        <div className="relative my-32 will-change-auto">
           <div className="absolute top-0 left-0 right-0 h-32 bg-gradient-to-b from-black to-transparent pointer-events-none z-10"></div>
           <Servicios></Servicios>
           <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-black to-transparent pointer-events-none z-10"></div>
@@ -76,14 +249,14 @@ export default function Home() {
       </FadeInSection>
 
       {/* Sección 4: Portafolio */}
-      <FadeInSection delay={0.2}>
-        <div className="relative my-32 z-0">
+      <FadeInSection delay={0}>
+        <div className="relative my-32 z-0 will-change-auto">
           <Portafolio></Portafolio>
         </div>
       </FadeInSection>
 
       {/* Sección 5: Soporte */}
-      <FadeInSection delay={0.25}>
+      <FadeInSection delay={0}>
         <div className="relative overflow-hidden bg-[url('/wallet.png')] bg-cover bg-center w-full ring-1 ring-white/10 rounded-4xl shadow-2xl my-32">
         <div className="absolute inset-0 bg-gradient-to-r from-black/55 via-black/35 to-transparent" aria-hidden="true"></div>
         <div className="absolute top-0 left-0 right-0 h-32 bg-gradient-to-b from-black to-transparent pointer-events-none z-10"></div>
@@ -114,8 +287,8 @@ export default function Home() {
       </FadeInSection>
 
       {/* Sección 6: Sobre Nosotros */}
-      <FadeInSection delay={0.2}>
-        <div className="relative overflow-hidden bg-[url('/morado1.png')] bg-cover bg-center w-full ring-1 ring-white/10 rounded-4xl shadow-2xl px-6 md:px-10 lg:px-14 py-24 md:py-32">
+      <FadeInSection delay={0}>
+        <div className="relative overflow-hidden bg-[url('/morado1.png')] bg-cover bg-center w-full ring-1 ring-white/10 rounded-4xl shadow-2xl px-6 md:px-10 lg:px-14 py-24 md:py-32 will-change-auto">
         <div className="absolute inset-0 bg-black/20" aria-hidden="true"></div>
         <div className="absolute top-0 left-0 right-0 h-32 bg-gradient-to-b from-black to-transparent pointer-events-none z-10"></div>
         <div className="relative">

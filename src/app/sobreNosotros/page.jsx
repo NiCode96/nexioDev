@@ -2,6 +2,7 @@
 import Image from "next/image";
 import { StickyScroll } from "@/components/ui/sticky-scroll-reveal";
 import VenomBeam from "@/components/ui/venom-beam";
+import { CardBody, CardContainer, CardItem } from "@/components/ui/3d-card";
 import { Michroma } from "next/font/google";
 const michroma = Michroma({ subsets: ["latin"], weight: "400" });
 
@@ -27,15 +28,51 @@ export default function SobreNosotros() {
           </p>
         </div>
         <div className="order-first md:order-none">
-          <Image
-            src="/webstorm.svg"
-            width={1200}
-            height={800}
-            sizes="(min-width: 1024px) 600px, (min-width: 768px) 50vw, 100vw"
-            alt="Equipo de desarrollo trabajando en soluciones web"
-            className="rounded-2xl md:rounded-3xl w-full h-auto object-cover ring-1 ring-white/10 shadow-xl"
-            priority
-          />
+          <CardContainer className="inter-var w-full">
+            <CardBody className="bg-gray-50 relative group/card dark:hover:shadow-2xl dark:hover:shadow-emerald-500/[0.1] dark:bg-black dark:border-white/[0.2] border-black/[0.1] w-full sm:w-[35rem] h-auto rounded-xl p-8 border">
+              <CardItem
+                translateZ={100}
+                className="text-2xl font-bold text-neutral-600 dark:text-white"
+              >
+                NativeCode
+              </CardItem>
+              <CardItem
+                as="p"
+                translateZ={60}
+                className="text-neutral-500 text-base max-w-sm mt-3 dark:text-neutral-300"
+              >
+                Soluciones digitales profesionales que transforman tu visión en realidad.
+              </CardItem>
+              <CardItem translateZ={100} className="w-full mt-6">
+                <Image
+                  src="/webstorm.svg"
+                  width={1000}
+                  height={1000}
+                  alt="Equipo de desarrollo trabajando en soluciones web"
+                  className="h-72 w-full object-cover rounded-xl group-hover/card:shadow-xl"
+                  priority
+                />
+              </CardItem>
+              <div className="flex justify-between items-center mt-24">
+                <CardItem
+                  translateZ={20}
+                  as="a"
+                  href="/contacto"
+                  className="px-5 py-2.5 rounded-xl text-sm font-normal dark:text-white hover:text-purple-400 transition-colors"
+                >
+                  Conoce más →
+                </CardItem>
+                <CardItem
+                  translateZ={20}
+                  as="a"
+                  href="/comprar"
+                  className="px-5 py-2.5 rounded-xl bg-black dark:bg-white dark:text-black text-white text-sm font-bold hover:scale-105 transition-transform"
+                >
+                  Contáctanos
+                </CardItem>
+              </div>
+            </CardBody>
+          </CardContainer>
         </div>
       </section>
 

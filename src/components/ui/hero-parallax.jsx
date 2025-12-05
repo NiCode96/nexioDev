@@ -128,7 +128,7 @@ export const ProductCard = ({ product, translate }) => {
           width="600"
           loading="lazy"
           decoding="async"
-          className="object-cover object-left-top absolute h-full w-full inset-0 rounded-2xl ring-1 ring-white/10"
+          className="object-cover object-center absolute h-full w-full inset-0 rounded-2xl ring-1 ring-white/10"
           alt={product.title}
         />
       </a>

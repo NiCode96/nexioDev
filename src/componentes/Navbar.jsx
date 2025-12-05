@@ -27,13 +27,13 @@ const pages = [
 function ResponsiveAppBar() {
   const [anchorElNav, setAnchorElNav] = React.useState(null);
 
-  const handleOpenNavMenu = (event) => {
+  const handleOpenNavMenu = React.useCallback((event) => {
     setAnchorElNav(event.currentTarget);
-  };
+  }, []);
 
-  const handleCloseNavMenu = () => {
+  const handleCloseNavMenu = React.useCallback(() => {
     setAnchorElNav(null);
-  };
+  }, []);
 
   return (
     <AppBar
@@ -47,6 +47,7 @@ function ResponsiveAppBar() {
         borderBottom: '1px solid rgba(255,255,255,0.08)',
         boxShadow: '0 6px 28px rgba(0,0,0,0.35)',
         fontFamily: michroma.style.fontFamily,
+        willChange: 'auto',
       }}
     >
       <Container maxWidth="xl">
@@ -63,6 +64,8 @@ function ResponsiveAppBar() {
                   width={88}
                   height={44}
                   style={{ objectFit: 'contain', borderRadius: '12px', padding: '4px' }}
+                  priority
+                  loading="eager"
                 />
               </Link>
               <Typography
@@ -79,6 +82,7 @@ function ResponsiveAppBar() {
                   fontSize: '1.0rem',
                   lineHeight: 1.05,
                   opacity: 0.92,
+                  transition: 'opacity 0.2s ease',
                   '&:hover': { opacity: 1 }
                 }}
               >
@@ -112,17 +116,20 @@ function ResponsiveAppBar() {
                 open={Boolean(anchorElNav)}
                 onClose={handleCloseNavMenu}
                 sx={{ display: { xs: 'block', md: 'none' } }}
-                PaperProps={{
-                  sx: {
-                    backgroundColor: '#111',
-                    color: 'white',
-                    borderRadius: 2,
-                    border: '1px solid rgba(255,255,255,0.08)',
-                    boxShadow: '0 12px 32px rgba(0,0,0,0.45)',
-                    mt: 1,
-                    fontFamily: michroma.style.fontFamily,
+                slotProps={{
+                  paper: {
+                    sx: {
+                      backgroundColor: '#111',
+                      color: 'white',
+                      borderRadius: 2,
+                      border: '1px solid rgba(255,255,255,0.08)',
+                      boxShadow: '0 12px 32px rgba(0,0,0,0.45)',
+                      mt: 1,
+                      fontFamily: michroma.style.fontFamily,
+                    }
                   }
                 }}
+                transitionDuration={200}
               >
                 {pages.map((page) => (
                   <MenuItem key={page.label} onClick={handleCloseNavMenu} sx={{ px: 2, py: 1.25 }}>
@@ -193,7 +200,7 @@ function ResponsiveAppBar() {
                     textTransform: 'none',
                     borderRadius: 2,
                     opacity: 0.9,
-                    transition: 'all .2s ease',
+                    transition: 'all 0.15s ease',
                     '&:hover': {
                       opacity: 1,
                       backgroundColor: 'rgba(255,255,255,0.06)',
@@ -226,7 +233,7 @@ function ResponsiveAppBar() {
                   border: '1px solid rgba(255,255,255,0.18)',
                   background: 'linear-gradient(to right, rgba(99,102,241,0.15), rgba(34,211,238,0.15))',
                   boxShadow: '0 6px 20px rgba(0,0,0,0.35)',
-                  transition: 'all .2s ease',
+                  transition: 'all 0.15s ease',
                   '&:hover': {
                     background: 'linear-gradient(to right, rgba(99,102,241,0.22), rgba(34,211,238,0.22))',
                     transform: 'translateY(-1px)',

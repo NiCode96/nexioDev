@@ -17,27 +17,27 @@ export default function Portafolio(){
     {
       title: "Runa Joyas",
       link: "https://runajoyas.cl/",
-      thumbnail: "/runa.png",
+      thumbnail: "/runajoyas1.png",
     },
     {
       title: "JPA Ingeniería",
       link: "https://jpaingenieriasolutions.cl/",
-      thumbnail: "/jpa.png",
+      thumbnail: "/jpaing.png",
     },
     {
-      title: "Runa Joyas - Proyecto 2",
-      link: "https://runajoyas.cl/",
-      thumbnail: "/runa.png",
+      title: "Medify.cl",
+      link: "https://medify.cl/",
+      thumbnail: "/medifyport.png",
     },
     {
-      title: "JPA Ingeniería - Proyecto 2",
-      link: "https://jpaingenieriasolutions.cl/",
-      thumbnail: "/jpa.png",
+      title: "Macar-Repuestos",
+      link: "https://www.repuestosmacar.cl/",
+      thumbnail: "/macarrep.png",
     },
     {
-      title: "Runa Joyas - Proyecto 3",
-      link: "https://runajoyas.cl/",
-      thumbnail: "/runa.png",
+      title: "Dennis Psicología",
+      link: "https://dennispsicologia.cl/",
+      thumbnail: "/dennismed.png",
     },
     {
       title: "JPA Ingeniería - Proyecto 3",
